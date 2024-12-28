@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cxqit1c0gxq8r"]
+
+[ext_resource type="Texture2D" uid="uid://brjt6pc0x6len" path="res://UI/Inventory_bar_small.png" id="1_p1uje"]
+
+[resource]
+texture = ExtResource("1_p1uje")
+expand_margin_left = 35.0
+expand_margin_right = 25.0

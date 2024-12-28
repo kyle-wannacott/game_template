@@ -1,0 +1,481 @@
+[gd_scene load_steps=2 format=3 uid="uid://budg1a15um0bb"]
+
+[ext_resource type="Script" uid="uid://pc6r7g3gfj83" path="res://player_settings/player_settings.gd" id="1_87m2y"]
+
+[node name="settings_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+script = ExtResource("1_87m2y")
+
+[node name="options_vbox" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -154.0
+offset_right = 150.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume_menu_button" type="Button" parent="options_vbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Resume
+"
+expand_icon = true
+
+[node name="controls_menu_button" type="Button" parent="options_vbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Controls
+"
+
+[node name="video_menu_button" type="Button" parent="options_vbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Video
+"
+
+[node name="sound_menu_button" type="Button" parent="options_vbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Sound
+"
+
+[node name="quit" type="Button" parent="options_vbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Quit
+"
+
+[node name="audio_settings" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -155.0
+offset_right = 156.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="audio_settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -159.0
+offset_right = 162.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="v_box_container" type="VBoxContainer" parent="audio_settings"]
+layout_mode = 0
+offset_left = -10.0
+offset_right = 291.0
+offset_bottom = 307.0
+alignment = 1
+
+[node name="sound_title_label" type="Label" parent="audio_settings/v_box_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sound"
+
+[node name="h_separator" type="HSeparator" parent="audio_settings/v_box_container"]
+layout_mode = 2
+
+[node name="master_hbox" type="HBoxContainer" parent="audio_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="label" type="Label" parent="audio_settings/v_box_container/master_hbox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Master"
+
+[node name="master_sound_slider" type="HSlider" parent="audio_settings/v_box_container/master_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="sound_effects_hbox" type="HBoxContainer" parent="audio_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="label" type="Label" parent="audio_settings/v_box_container/sound_effects_hbox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Effects
+"
+
+[node name="sound_effects_slider" type="HSlider" parent="audio_settings/v_box_container/sound_effects_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="music_hbox" type="HBoxContainer" parent="audio_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="label" type="Label" parent="audio_settings/v_box_container/music_hbox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Music  
+"
+
+[node name="music_sound_slider" type="HSlider" parent="audio_settings/v_box_container/music_hbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="h_separator2" type="HSeparator" parent="audio_settings/v_box_container"]
+layout_mode = 2
+
+[node name="h_box_container4" type="HBoxContainer" parent="audio_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="sound_back_button" type="Button" parent="audio_settings/v_box_container/h_box_container4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
+[node name="video_settings" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -260.0
+offset_right = 158.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="video_settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -159.0
+offset_right = 172.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="v_box_container" type="VBoxContainer" parent="video_settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -83.0
+offset_right = 67.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="label" type="Label" parent="video_settings/v_box_container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Video"
+horizontal_alignment = 1
+
+[node name="h_separator2" type="HSeparator" parent="video_settings/v_box_container"]
+layout_mode = 2
+
+[node name="render_scale_3d" type="HBoxContainer" parent="video_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="v_box_container" type="VBoxContainer" parent="video_settings/v_box_container/render_scale_3d"]
+layout_mode = 2
+
+[node name="render_scale_label" type="Label" parent="video_settings/v_box_container/render_scale_3d/v_box_container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Render Scale: "
+
+[node name="render_scale_3d_slider" type="HSlider" parent="video_settings/v_box_container/render_scale_3d/v_box_container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(181.845, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.25
+max_value = 2.0
+step = 0.05
+value = 0.8
+
+[node name="h_box_container2" type="HBoxContainer" parent="video_settings/v_box_container"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="video_settings/v_box_container/h_box_container2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Scaling Mode:"
+
+[node name="render_scale_mode" type="OptionButton" parent="video_settings/v_box_container/h_box_container2"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Bilinear"
+popup/item_0/id = 0
+popup/item_1/text = "FSR1"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = "FSR2"
+popup/item_2/id = 2
+
+[node name="h_box_container3" type="HBoxContainer" parent="video_settings/v_box_container"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="video_settings/v_box_container/h_box_container3"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Texture Filtering:"
+
+[node name="texture_filtering_mode" type="OptionButton" parent="video_settings/v_box_container/h_box_container3"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Nearest"
+popup/item_0/id = 0
+popup/item_1/text = "Linear"
+popup/item_1/id = 1
+popup/item_2/text = "Nearest Mip"
+popup/item_2/id = 2
+popup/item_3/text = "Linear Mip"
+popup/item_3/id = 3
+
+[node name="fullscreen_hbox" type="HBoxContainer" parent="video_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="label" type="Label" parent="video_settings/v_box_container/fullscreen_hbox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fullscreen"
+
+[node name="fullscreen_checkbox" type="CheckBox" parent="video_settings/v_box_container/fullscreen_hbox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="vsync_hbox" type="HBoxContainer" parent="video_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="label" type="Label" parent="video_settings/v_box_container/vsync_hbox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Vsync"
+
+[node name="vsync_checkbox" type="CheckBox" parent="video_settings/v_box_container/vsync_hbox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="snap_2d_pixels_to_vertex" type="HBoxContainer" parent="video_settings/v_box_container"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="label" type="Label" parent="video_settings/v_box_container/snap_2d_pixels_to_vertex"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Snap Pixels to Vertex"
+
+[node name="snap_pixels_checkbox" type="CheckBox" parent="video_settings/v_box_container/snap_2d_pixels_to_vertex"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="snap_transforms" type="HBoxContainer" parent="video_settings/v_box_container"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="label" type="Label" parent="video_settings/v_box_container/snap_transforms"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Snap Transforms to pixels"
+
+[node name="snap_transforms_checkbox" type="CheckBox" parent="video_settings/v_box_container/snap_transforms"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="h_separator" type="HSeparator" parent="video_settings/v_box_container"]
+layout_mode = 2
+
+[node name="h_box_container" type="HBoxContainer" parent="video_settings/v_box_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="video_back_button" type="Button" parent="video_settings/v_box_container/h_box_container"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
+[node name="control_settings" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -260.0
+offset_right = 158.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control_vbox" type="VBoxContainer" parent="control_settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -83.0
+offset_right = 67.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Control_title" type="Label" parent="control_settings/Control_vbox"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Controls
+"
+horizontal_alignment = 1
+
+[node name="h_separator2" type="HSeparator" parent="control_settings/Control_vbox"]
+layout_mode = 2
+
+[node name="scroll_container" type="ScrollContainer" parent="control_settings/Control_vbox"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+
+[node name="action_list" type="VBoxContainer" parent="control_settings/Control_vbox/scroll_container"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="key_binding" type="HBoxContainer" parent="control_settings/Control_vbox/scroll_container/action_list"]
+layout_mode = 2
+
+[node name="button" type="Button" parent="control_settings/Control_vbox/scroll_container/action_list/key_binding"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="margin_container" type="MarginContainer" parent="control_settings/Control_vbox/scroll_container/action_list/key_binding/button"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 136.0
+offset_bottom = 16.0
+
+[node name="LabelAction" type="Label" parent="control_settings/Control_vbox/scroll_container/action_list/key_binding/button/margin_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Action:"
+
+[node name="LabelInput" type="Label" parent="control_settings/Control_vbox/scroll_container/action_list/key_binding/button/margin_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Input Key"
+horizontal_alignment = 2
+
+[node name="h_separator3" type="HSeparator" parent="control_settings/Control_vbox"]
+layout_mode = 2
+
+[node name="h_box_container" type="HBoxContainer" parent="control_settings/Control_vbox"]
+layout_mode = 2
+alignment = 1
+
+[node name="back_button" type="HBoxContainer" parent="control_settings/Control_vbox/h_box_container"]
+layout_mode = 2
+
+[node name="control_back_button" type="Button" parent="control_settings/Control_vbox/h_box_container/back_button"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+alignment = 0
+
+[node name="reset_button" type="HBoxContainer" parent="control_settings/Control_vbox/h_box_container"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+
+[node name="reset_keybinds_button" type="Button" parent="control_settings/Control_vbox/h_box_container/reset_button"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Reset Keybinds"
+alignment = 2

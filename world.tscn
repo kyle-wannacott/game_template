@@ -1,0 +1,75 @@
+[gd_scene load_steps=13 format=3 uid="uid://clhqqkv7l5c7y"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_036b0"]
+[ext_resource type="Script" path="res://player.gd" id="2_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://budg1a15um0bb" path="res://player_settings/player_settings.tscn" id="3_gbfbk"]
+[ext_resource type="Script" path="res://resources.gd" id="4_dwbse"]
+[ext_resource type="Script" path="res://utils.gd" id="5_dwbse"]
+[ext_resource type="Texture2D" uid="uid://brv0rm1s0ndb" path="res://grey soft/ShapeA (1).png" id="5_ioo17"]
+[ext_resource type="Texture2D" uid="uid://bxmp53ntbbrta" path="res://icon.svg" id="7_pkg7o"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_18br3"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w62lf"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1obcd"]
+texture = ExtResource("5_ioo17")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/modulate = Color(0.62963, 0.363005, 0.253573, 1)
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_w62lf")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_svtj3"]
+
+[sub_resource type="TileSet" id="TileSet_hqkll"]
+tile_size = Vector2i(64, 64)
+occlusion_layer_0/light_mask = 1
+occlusion_layer_0/sdf_collision = true
+physics_layer_0/collision_layer = 16
+sources/1 = SubResource("TileSetAtlasSource_1obcd")
+sources/2 = SubResource("TileSetScenesCollectionSource_svtj3")
+
+[node name="world" type="Node2D" groups=["world"]]
+script = ExtResource("1_036b0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.00102728, 0.139346, 0.397952, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5185.0
+offset_top = -5032.0
+offset_right = -5085.0
+offset_bottom = -4932.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+texture = SubResource("CanvasTexture_18br3")
+stretch_mode = 1
+
+[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
+script = ExtResource("2_pkg7o")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="settings_menu" parent="player" instance=ExtResource("3_gbfbk")]
+unique_name_in_owner = true
+z_index = 100
+
+[node name="map_resources" type="TileMapLayer" parent="." groups=["resources"]]
+tile_set = SubResource("TileSet_hqkll")
+script = ExtResource("4_dwbse")
+
+[node name="utils" type="Node" parent="." groups=["utils"]]
+script = ExtResource("5_dwbse")
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(-233, -336)
+texture = ExtResource("7_pkg7o")
