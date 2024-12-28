@@ -41,12 +41,6 @@ enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/wo
 
 utils=""
 player=""
-busy_drones=""
-base_drones=""
-drill_drones=""
-busy_base_drones=""
-idle_drones=""
-idle_base_drones=""
 navigation_region=""
 
 [input]
